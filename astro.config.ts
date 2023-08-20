@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config'
+import { defineConfig, sharpImageService } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import netlify from '@astrojs/netlify/functions'
@@ -12,7 +12,21 @@ const { SITE } = loadEnv(process.env.NODE_ENV, process.cwd(), '')
 export default defineConfig({
   // site: "https://example.com",
   site: SITE,
-  integrations: [mdx(), sitemap(), vue(), tailwind()],
+  integrations: [
+    mdx(),
+    sitemap(),
+    vue({
+      appEntrypoint: '/src/pages/_app',
+    }),
+    tailwind(),
+  ],
+  experimental: {
+    assets: true,
+  },
+  image: {
+    service: sharpImageService(),
+    // service: squooshImageService(),
+  },
   output: 'server',
   adapter: netlify(),
 })
