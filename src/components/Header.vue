@@ -3,9 +3,9 @@
 </script>
 
 <template>
-<div>
-  header
-</div>
+  <div>
+    header
+  </div>
 </template>
 
 <style scoped>
