@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import FormattedDate from '../../components/FormattedDate.astro'
-import BaseBlog from '../../layouts/BaseBlog.astro'
+import Layout from '../../layouts/BaseBlog.astro'
 
 // import {getImage, Image} from 'astro:assets'
 
@@ -10,7 +10,7 @@ const posts = (await getCollection('blog')).sort(
 );
 ---
 
-<BaseBlog>
+<Layout>
   <section>
     <ul>
       {
@@ -28,4 +28,4 @@ const posts = (await getCollection('blog')).sort(
         }
     </ul>
   </section>
-</BaseBlog>
+</Layout>
