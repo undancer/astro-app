@@ -1,4 +1,5 @@
-[functions]
-
-[functions."*"]
-node_bundler = "esbuild"
+#[functions]
+#node_bundler = "esbuild"
+#
+#[functions."*"]
+#node_bundler = "esbuild"
