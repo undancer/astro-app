@@ -20,13 +20,13 @@ export default defineConfig({
     }),
     tailwind(),
   ],
-  experimental: {
-    assets: true,
-  },
-  image: {
-    service: sharpImageService(),
-    // service: squooshImageService(),
-  },
+  // experimental: {
+  //   assets: true,
+  // },
+  // image: {
+  //   service: sharpImageService(),
+  //   // service: squooshImageService(),
+  // },
   output: 'server',
   adapter: netlify(),
 })
